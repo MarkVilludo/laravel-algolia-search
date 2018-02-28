@@ -1,0 +1,2 @@
+# Laravel search using Algolia
+
