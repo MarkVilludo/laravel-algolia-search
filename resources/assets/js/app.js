@@ -14,16 +14,11 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('instant-search', require('./components/InstantSearch.vue'));
 
 const app = new Vue({
-    el: '#my-app',
-    methods: {
-        runSearch(){
-            axios.get('/index?search=veniam').then((res) => {
-                console.log(res.data);
-            });
-        }
-    }
+    el: '#my-app'
 });

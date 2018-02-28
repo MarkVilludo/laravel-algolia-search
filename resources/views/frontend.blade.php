@@ -13,7 +13,11 @@
 </head>
 <body>
     <div id="my-app">
-        <button class="btn btn-default" @click="runSearch">Search</button>
+        <section class="pt-5 pb-5">
+            <div class="container">
+                <instant-search></instant-search>
+            </div>
+        </section>
     </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
