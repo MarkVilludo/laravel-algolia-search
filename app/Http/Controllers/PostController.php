@@ -12,9 +12,10 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+	    $posts = Post::search($request->get('search'))->get();
+	    return $posts;
     }
 
     /**
@@ -88,6 +89,7 @@ class PostController extends Controller
      */
 	public function forntEnd()
 	{
+
 		return view('frontend');
     }
 }

@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'PostController@forntEnd');
+Route::get('/index', 'PostController@index');
