@@ -9,6 +9,68 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.search-result{
+	height: 100%;
+}
+.search-form .ais-clear{
+	display: none;
+
+}
+.search-form .ais-input{
+	width: 90%;
+	height: 40px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	float: left;
+}
+.ais-search-box__submit{
+	width: 10%;
+	height: 40px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+.ais-search-box__submit:focus, .search-form .ais-input:focus{
+	outline: 0 none;
+}
+
+
+.algolia-autocomplete {
+	width: 100%;
+}
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+	width: 100%;
+}
+.algolia-autocomplete .aa-hint {
+	color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-top: none;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+	cursor: pointer;
+	padding: 5px 4px;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+	background-color: #B2D7FF;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+	font-weight: bold;
+	font-style: normal;
+}
+.aa-suggestion + .aa-suggestion{
+	border-top: 1px solid #ccc;
+}
+.aa-suggestion em, .search-result .card-title em{
+	background-color: #FDEE00;
+	font-style: normal;
 }

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 367);
+/******/ 	return __webpack_require__(__webpack_require__.s = 373);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -52814,55 +52814,51 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 367 */
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(368);
-module.exports = __webpack_require__(372);
+module.exports = __webpack_require__(374);
 
 
 /***/ }),
-/* 368 */
+/* 374 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__ = __webpack_require__(184);
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 __webpack_require__(160);
 
 window.Vue = __webpack_require__(181);
 
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
+ * Vue js code
  */
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_instantsearch__["a" /* default */]);
 
-Vue.component('instant-search', __webpack_require__(369));
+Vue.component('suggestable-search', __webpack_require__(375));
 
 var app = new Vue({
   el: '#my-app'
 });
 
 /***/ }),
-/* 369 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(366)
 /* script */
-var __vue_script__ = __webpack_require__(370)
+var __vue_script__ = __webpack_require__(376)
 /* template */
-var __vue_template__ = __webpack_require__(371)
+var __vue_template__ = __webpack_require__(377)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52879,7 +52875,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/InstantSearch.vue"
+Component.options.__file = "resources/assets/js/components/SuggestableSearch.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -52888,9 +52884,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3655347c", Component.options)
+    hotAPI.createRecord("data-v-065f7c02", Component.options)
   } else {
-    hotAPI.reload("data-v-3655347c", Component.options)
+    hotAPI.reload("data-v-065f7c02", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52901,7 +52897,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 370 */
+/* 376 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52910,154 +52906,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			appId: "41ZMI9R1JK",
-			secret: "b114369c19b18a3291888059b7fd4621"
-		};
-	},
-	methods: {},
-	created: function created() {}
+    data: function data() {
+        return {};
+    },
+
+    methods: {}
 });
 
 /***/ }),
-/* 371 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "ais-index",
-    {
-      attrs: {
-        "app-id": _vm.appId,
-        "api-key": _vm.secret,
-        "index-name": "title"
-      }
-    },
-    [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "text-center mb-4" }, [
-          _c("h1", [_vm._v("Algolia instant search")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v("Go to "),
-            _c("a", { attrs: { href: "/suggestable" } }, [
-              _vm._v("Suggestable Search")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search-form mb-5" }, [
-          _c(
-            "div",
-            { staticClass: "col-lg-8 offset-lg-2" },
-            [
-              _c("ais-search-box", {
-                class: ["clearfix"],
-                attrs: { placeholder: "Find posts..." }
-              })
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "container" },
-        [
-          _c("ais-results", {
-            class: ["row"],
-            attrs: { "results-per-page": 9 },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function(ref) {
-                  var result = ref.result
-                  return [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("div", { staticClass: "search-result pb-4" }, [
-                        _c("div", { staticClass: "card h-100" }, [
-                          _c("img", {
-                            staticClass: "card-img-top",
-                            attrs: {
-                              src: "https://lorempixel.com/640/380/?12749",
-                              alt: "Card image cap"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "card-body" }, [
-                            _c(
-                              "h5",
-                              { staticClass: "card-title" },
-                              [
-                                _c("ais-highlight", {
-                                  attrs: {
-                                    result: result,
-                                    "attribute-name": "title"
-                                  }
-                                })
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "card-text" }, [
-                              _vm._v(_vm._s(result.body.substring(0, 200)))
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                }
-              }
-            ])
-          })
-        ],
-        1
-      )
-    ]
-  )
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53065,15 +52931,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3655347c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-065f7c02", module.exports)
   }
 }
-
-/***/ }),
-/* 372 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

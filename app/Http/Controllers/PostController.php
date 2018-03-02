@@ -47,7 +47,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return $post;
     }
 
     /**
@@ -89,7 +89,11 @@ class PostController extends Controller
      */
 	public function forntEnd()
 	{
-
 		return view('frontend');
+    }
+
+	public function suggestable()
+	{
+		return view('suggestable');
     }
 }
