@@ -1,48 +1,39 @@
 <template>
-	<ais-index
-		:app-id="appId"
-		:api-key="secret"
-		index-name="title"
-	>
+	<div>
 		<div class="container">
-			<div class="text-center mb-4">
-				<h1>Algolia instant search</h1>
-				<p>Go to <a href="/suggestable">Suggestable Search</a></p>
-			</div>
-			
-			<div class="search-form mb-5">
-				<div class="col-lg-8 offset-lg-2">
-					<ais-search-box placeholder="Find posts..." :class="['clearfix']"></ais-search-box>
-				</div>
-			</div>
+			<header-top></header-top>
 		</div>
 		
 		<div class="container">
-			<ais-results :class="['row']" :results-per-page="9">
-				<template slot-scope="{ result }">
+			<ais-index :app-id="appId" :api-key="secret" index-name="advance_search">
+				<div class="row">
 					<div class="col-md-4">
-						<div class="search-result pb-4">
-							<div class="card h-100">
-								<img class="card-img-top" :src="result.image" alt="Card image cap">
-								<div class="card-body">
-									<h5 class="card-title"><ais-highlight :result="result" attribute-name="title"></ais-highlight></h5>
-									<p class="card-text">{{ result.body.substring(0, 200) }}</p>
-								</div>
-							</div>
-						</div>
+						<search-form></search-form>
 					</div>
-				</template>
-			</ais-results>
+					<div class="col-md-8">
+						<search-result></search-result>
+					</div>
+				</div>
+			</ais-index>
 		</div>
-	</ais-index>
+	</div>
 </template>
 
 <script>
+	import Header from './partial/Header.vue';
+	import SearchResult from './partial/SearchResult.vue';
+	import SearchForm from './partial/SearchForm.vue';
+
 	export default {
+		components: {
+			'header-top': Header,
+			'search-result': SearchResult,
+			'search-form': SearchForm,
+		},
 	    data: function (){
 		    return {
                 appId: process.env.MIX_ALGOLIA_APP_ID,
-                secret: process.env.MIX_ALGOLIA_SECRET
+				secret: process.env.MIX_ALGOLIA_SECRET,
 		    };
         },
 		methods: {

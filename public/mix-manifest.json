@@ -1,6 +1,6 @@
 {
+    "/js/advance-search.js": "/js/advance-search.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/suggestable.js": "/js/suggestable.js",
-    "/js/advance-search.js": "/js/advance-search.js"
+    "/js/suggestable.js": "/js/suggestable.js"
 }

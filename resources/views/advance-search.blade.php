@@ -8,6 +8,7 @@
 
     <title>Laravel</title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 </head>

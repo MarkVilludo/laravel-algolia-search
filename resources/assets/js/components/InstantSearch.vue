@@ -5,10 +5,7 @@
 		index-name="title"
 	>
 		<div class="container">
-			<div class="text-center mb-4">
-				<h1>Algolia instant search</h1>
-				<p>Go to <a href="/suggestable">Suggestable Search</a></p>
-			</div>
+			<header-top></header-top>
 			
 			<div class="search-form mb-5">
 				<div class="col-lg-8 offset-lg-2">
@@ -38,7 +35,10 @@
 </template>
 
 <script>
+	import Header from './partial/Header.vue';
+
 	export default {
+		components: {'header-top': Header},
 	    data: function (){
 		    return {
                 appId: process.env.MIX_ALGOLIA_APP_ID,
