@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'PostController@forntEnd');
-Route::get('/index', 'PostController@index');
+Route::get('/', 'PostController@advanceSearch');
+Route::get('/instant', 'PostController@instantSearch');
+//Route::get('/index', 'PostController@index');
 Route::get('/suggestable', 'PostController@suggestable');
 Route::get('/posts/{post}', 'PostController@show');

@@ -85,15 +85,23 @@ class PostController extends Controller
     }
 
     /**
-     * Show frontend view
+     * Show advance search view
      */
-	public function forntEnd()
+	public function advanceSearch()
 	{
-		return view('frontend');
+		return view('advance-search');
     }
 
 	public function suggestable()
 	{
 		return view('suggestable');
+    }
+
+    /**
+     * Small instant search
+     */
+    public function instantSearch()
+    {
+        return view('small-instant');
     }
 }

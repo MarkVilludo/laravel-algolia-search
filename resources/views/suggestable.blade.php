@@ -27,14 +27,14 @@
     </section>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script>
 <script>
     var client = algoliasearch('41ZMI9R1JK', 'b114369c19b18a3291888059b7fd4621');
     var index = client.initIndex('title');
     index.setSettings({
-        'searchableAttributes': ['title']
+        'searchableAttributes': ['title', 'body']
     },function(err, content) {
         console.log(err);
     });
@@ -44,7 +44,7 @@
         openOnFocus: true
     }, [{
         source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5 }),
-        displayKey: 'title',
+        displayKey: 'title', // Title will show at input after clicked
         templates: {
             suggestion: function(suggestion){
                 var suggObj = suggestion._highlightResult;
