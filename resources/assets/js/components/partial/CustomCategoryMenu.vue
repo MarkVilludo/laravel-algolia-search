@@ -5,7 +5,8 @@
 		<ul class="list-group">
 			<li class="list-group-item d-flex justify-content-between align-items-center"
 				v-for="facet in facetValues"
-				:key="facet.name">
+				:key="facet.name"
+				:class="[(facet.isRefined ? 'list-group-item-primary' : '')]">
 				<a href="#" class="text-dark" @click.prevent="handleClick(facet.path)">
 					{{facet.name}}
 				</a>
@@ -45,8 +46,8 @@ export default {
 	data() {
 		return {
 			attribute: 'category',
-			limit: 10,
-			sortBy: ['isRefined:desc', 'count:desc', 'name:asc']
+			limit: 6,
+			sortBy: ['name:asc']
 		};
 	},
 

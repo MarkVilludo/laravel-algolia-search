@@ -10,18 +10,29 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+    <style>
+        .form-control{
+            height: 42px;
+        }
+    </style>
 </head>
 <body>
 <div id="my-app">
     <section class="pt-5 pb-5">
         <div class="container">
             <div class="text-center mb-4">
-                <h1>Algolia autocomplete search</h1>
-                <p>Go to <a href="/">Instant Search</a></p>
+                <h1 class="mb-4">Algolia Search with Laravel and Vue.js</h1>
+        
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                    <a class="btn btn-secondary" href="/">Advance Search</a>
+                    <a class="btn btn-secondary" href="/instant">Instant Blog Search</a>
+                    <a class="btn btn-secondary active" href="/suggestable">Autocomplete Search</a>
+                </div>
             </div>
 
             <div class="col-lg-6 offset-lg-3">
-                <input type="text" id="search-input" class="form-control" />
+                <input type="text" id="search-input" class="form-control" placeholder="Type here..." />
+                <span>Ex. <em>nulla</em></span>
             </div>
         </div>
     </section>

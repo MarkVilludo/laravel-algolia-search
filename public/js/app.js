@@ -53028,7 +53028,7 @@ function escapeHtml(string) {
 var disposed = false
 var normalizeComponent = __webpack_require__(87)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(409)
 /* template */
 var __vue_template__ = __webpack_require__(367)
 /* template functional */
@@ -53076,25 +53076,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "text-center mb-4" }, [
+    _c("h1", { staticClass: "mb-4" }, [
+      _vm._v("Algolia Search with Laravel and Vue.js")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "btn-group btn-group-lg",
+        attrs: { role: "group", "aria-label": "Basic example" }
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-secondary",
+            class: [_vm.pathName == "/" && "active"],
+            attrs: { href: "/" }
+          },
+          [_vm._v("Advance Search")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-secondary",
+            class: [_vm.pathName == "/instant" && "active"],
+            attrs: { href: "/instant" }
+          },
+          [_vm._v("Instant Blog Search")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "btn btn-secondary", attrs: { href: "/suggestable" } },
+          [_vm._v("Autocomplete Search")]
+        )
+      ]
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center mb-4" }, [
-      _c("h1", [_vm._v("Algolia instant search")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("Go to "),
-        _c("a", { attrs: { href: "/suggestable" } }, [
-          _vm._v("Suggestable Search")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53360,6 +53383,68 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            pathName: location.pathname
+        };
+    }
+});
 
 /***/ })
 /******/ ]);

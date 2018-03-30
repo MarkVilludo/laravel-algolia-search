@@ -53028,7 +53028,7 @@ function escapeHtml(string) {
 var disposed = false
 var normalizeComponent = __webpack_require__(87)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(409)
 /* template */
 var __vue_template__ = __webpack_require__(367)
 /* template functional */
@@ -53076,25 +53076,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "text-center mb-4" }, [
+    _c("h1", { staticClass: "mb-4" }, [
+      _vm._v("Algolia Search with Laravel and Vue.js")
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "btn-group btn-group-lg",
+        attrs: { role: "group", "aria-label": "Basic example" }
+      },
+      [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-secondary",
+            class: [_vm.pathName == "/" && "active"],
+            attrs: { href: "/" }
+          },
+          [_vm._v("Advance Search")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-secondary",
+            class: [_vm.pathName == "/instant" && "active"],
+            attrs: { href: "/instant" }
+          },
+          [_vm._v("Instant Blog Search")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "btn btn-secondary", attrs: { href: "/suggestable" } },
+          [_vm._v("Autocomplete Search")]
+        )
+      ]
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center mb-4" }, [
-      _c("h1", [_vm._v("Algolia instant search")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("Go to "),
-        _c("a", { attrs: { href: "/suggestable" } }, [
-          _vm._v("Suggestable Search")
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -53226,6 +53249,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53243,8 +53274,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			secret: "b114369c19b18a3291888059b7fd4621"
 		};
 	},
-	methods: {},
-	created: function created() {}
+	methods: {
+		onPageChange: function onPageChange() {
+			window.scrollTo(0, 0);
+		}
+	},
+	computed: {
+		paginationClass: function paginationClass() {
+			return {
+				'ais-pagination': 'pagination justify-content-center',
+				'ais-pagination__item': 'page-item',
+				'ais-pagination__link': 'page-link',
+				'ais-pagination__item--active': 'active',
+				'ais-pagination__item--disabled': 'disabled'
+			};
+		} // 
+
+	}
 });
 
 /***/ }),
@@ -53303,17 +53349,56 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("ais-results", {
+    attrs: { "results-per-page": 8 },
     scopedSlots: _vm._u([
       {
         key: "default",
         fn: function(ref) {
           var result = ref.result
           return [
-            _c("h2", [
-              _vm._v("\n        " + _vm._s(result.title) + "\n        ")
-            ]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(result.body))])
+            _c("div", { staticClass: "clearfix mb-4" }, [
+              _c("div", { staticClass: "media" }, [
+                _c("img", {
+                  staticClass: "align-self-start mr-3",
+                  attrs: { src: result.image, alt: "Generic placeholder image" }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "media-body" }, [
+                  _c("h3", { staticClass: "mt-0" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "text-info",
+                        attrs: { href: "/products/" + result.id }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(result.title) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "mt-0 " }, [
+                    _vm._v("Category: "),
+                    _c("span", { staticClass: "text-success" }, [
+                      _vm._v(_vm._s(result.category))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "mt-0 " }, [
+                    _vm._v("Price: "),
+                    _c("span", { staticClass: "text-danger" }, [
+                      _vm._v("$" + _vm._s(result.price))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(result.body))])
+                ])
+              ])
+            ])
           ]
         }
       }
@@ -53471,7 +53556,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "container" },
+      { staticClass: "container pt-4" },
       [
         _c(
           "ais-index",
@@ -53484,9 +53569,33 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-4" }, [_c("search-form")], 1),
+              _c(
+                "div",
+                { staticClass: "col-md-4" },
+                [_c("search-form"), _vm._v(" "), _c("ais-powered-by")],
+                1
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-8" }, [_c("search-result")], 1)
+              _c(
+                "div",
+                { staticClass: "col-md-8 pl-5" },
+                [_c("search-result")],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "div",
+                { staticClass: "col pt-3" },
+                [
+                  _c("ais-pagination", {
+                    attrs: { classNames: _vm.paginationClass },
+                    on: { "page-change": _vm.onPageChange }
+                  })
+                ],
+                1
+              )
             ])
           ]
         )
@@ -55601,7 +55710,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "form-group" }, [
     _c("h3", [
       _vm._v("Price "),
       _c("small", [
@@ -55704,6 +55813,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -55733,8 +55843,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			attribute: 'category',
-			limit: 10,
-			sortBy: ['isRefined:desc', 'count:desc', 'name:asc']
+			limit: 6,
+			sortBy: ['name:asc']
 		};
 	},
 	created: function created() {
@@ -55777,7 +55887,8 @@ var render = function() {
               {
                 key: facet.name,
                 staticClass:
-                  "list-group-item d-flex justify-content-between align-items-center"
+                  "list-group-item d-flex justify-content-between align-items-center",
+                class: [facet.isRefined ? "list-group-item-primary" : ""]
               },
               [
                 _c(
@@ -55814,6 +55925,33 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-62e1335a", module.exports)
   }
 }
+
+/***/ }),
+/* 409 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            pathName: location.pathname
+        };
+    }
+});
 
 /***/ })
 /******/ ]);

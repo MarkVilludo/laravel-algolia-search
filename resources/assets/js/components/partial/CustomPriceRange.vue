@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="form-group">
 		<h3>Price <small>${{showMinMax[0]}} - ${{showMinMax[1]}}</small></h3>
 
 		<div class="price-slider">

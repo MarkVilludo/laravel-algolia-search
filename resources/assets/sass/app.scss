@@ -84,7 +84,7 @@ body{
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .search-input-text-box {
 	.btn{
@@ -121,4 +121,7 @@ $slider-border-radius: 0;
 	background-image: none;
 	background-color: #3F51B5;
 	cursor: pointer;
+}
+.price-slider{
+	padding: 0 10px;
 }
